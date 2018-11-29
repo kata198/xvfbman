@@ -1,0 +1,7 @@
+include README.md
+include README.rst
+include LICENSE
+include MANIFEST.in
+include setup.py
+recursive-include xvfbman *.py
+recursive-include doc *.html
