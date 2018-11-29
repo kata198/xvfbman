@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html ><head ><title >Python: package xvfbman</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head><body bgcolor="#f0f0f8" >
+
+<table width="100%" cellspacing="0" cellpadding="2" border="0" summary="heading" >
+<tr bgcolor="#7799ee" >
+<td valign="bottom" >&nbsp;<br />
+<font color="#ffffff" face="helvetica, arial" >&nbsp;<br /><big ><big ><strong >xvfbman</strong></big></big></font></td><td align="right" valign="bottom" ><font color="#ffffff" face="helvetica, arial" ><a href="xvfbman.html" >index</a></font></td></tr></table>
+    <p ><tt >Copyright&nbsp;(c)&nbsp;2018&nbsp;-&nbsp;Timothy&nbsp;Savannah,&nbsp;All&nbsp;Rights&nbsp;Reserved<br />
+&nbsp;<br />
+Licensed&nbsp;under&nbsp;terms&nbsp;of&nbsp;Lesser&nbsp;GNU&nbsp;General&nbsp;Purpose&nbsp;License&nbsp;(LGPL)&nbsp;Version&nbsp;2<br />
+&nbsp;<br />
+Distribution&nbsp;should&nbsp;contain&nbsp;a&nbsp;full&nbsp;copy&nbsp;of&nbsp;this&nbsp;license&nbsp;as&nbsp;LICENSE,&nbsp;or&nbsp;check<br />
+&nbsp;&nbsp;https://raw.githubusercontent.com/kata198/xvfbman/master/LICENSE<br />
+&nbsp;<br />
+xvfbman&nbsp;-&nbsp;Manages&nbsp;Xvfb&nbsp;sessions</tt></p>
+<p >
+<table width="100%" cellspacing="0" cellpadding="2" border="0" summary="section" >
+<tr bgcolor="#aa55cc" >
+<td colspan="3" valign="bottom" >&nbsp;<br />
+<font color="#ffffff" face="helvetica, arial" ><big ><strong >Package Contents</strong></big></font></td></tr>
+    
+<tr ><td bgcolor="#aa55cc" ><tt >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td >&nbsp;</td>
+<td width="100%" ><table width="100%" summary="list" ><tr ><td width="25%" valign="top" ></td><td width="25%" valign="top" ></td><td width="25%" valign="top" ></td><td width="25%" valign="top" ></td></tr></table></td></tr></table><p >
+<table width="100%" cellspacing="0" cellpadding="2" border="0" summary="section" >
+<tr bgcolor="#eeaa77" >
+<td colspan="3" valign="bottom" >&nbsp;<br />
+<font color="#ffffff" face="helvetica, arial" ><big ><strong >Functions</strong></big></font></td></tr>
+    
+<tr ><td bgcolor="#eeaa77" ><tt >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td >&nbsp;</td>
+<td width="100%" ><dl ><dt ><a name="-ensureDisplayPresent" ><strong >ensureDisplayPresent</strong></a>(xvfbStartNum=50, xvfbLastNum=99, screenStr='1280x720x24')</dt><dd ><tt >ensureDisplayPresent&nbsp;-&nbsp;Ensure&nbsp;we&nbsp;have&nbsp;either&nbsp;DISPLAY&nbsp;env&nbsp;var&nbsp;set,<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;we&nbsp;attempt&nbsp;to&nbsp;start&nbsp;an&nbsp;Xvfb&nbsp;session&nbsp;via&nbsp;startXvfbRange<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;xvfbStartNum&nbsp;&lt;int&gt;&nbsp;Default&nbsp;50&nbsp;-&nbsp;If&nbsp;DISPLAY&nbsp;is&nbsp;not&nbsp;set,<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;to&nbsp;start&nbsp;Xvfb&nbsp;from&nbsp;here&nbsp;to&nbsp;#xvfbLastNum&nbsp;inclusive<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;xvfbLastNum&nbsp;&lt;int&gt;&nbsp;Default&nbsp;99&nbsp;-&nbsp;If&nbsp;DISPLAY&nbsp;is&nbsp;not&nbsp;set,<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;to&nbsp;start&nbsp;Xvfb&nbsp;from&nbsp;#xvfbStartNum&nbsp;to&nbsp;here&nbsp;inclusive<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;screenStr&nbsp;&lt;str&gt;&nbsp;Default&nbsp;DEFAULT_SCREEN_STR&nbsp;-&nbsp;If&nbsp;DISPLAY<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;is&nbsp;not&nbsp;set,&nbsp;try&nbsp;to&nbsp;start&nbsp;Xvfb&nbsp;using&nbsp;this&nbsp;screen&nbsp;configuration<br />
+&nbsp;<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NOTE:&nbsp;This&nbsp;will&nbsp;set&nbsp;the&nbsp;environment&nbsp;variable&nbsp;'DISPLAY'&nbsp;if&nbsp;not&nbsp;already&nbsp;set<br />
+&nbsp;<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@return&nbsp;&lt;bool&gt;&nbsp;-&nbsp;True&nbsp;if&nbsp;we&nbsp;did&nbsp;setup&nbsp;an&nbsp;Xvfb&nbsp;and&nbsp;set&nbsp;DISPLAY,<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;False&nbsp;if&nbsp;we&nbsp;use&nbsp;existing&nbsp;DISPLAY</tt></dd></dl>
+ <dl ><dt ><a name="-getDisplayStrForServerNum" ><strong >getDisplayStrForServerNum</strong></a>(serverNum)</dt><dd ><tt >getDisplayStrForServerNum&nbsp;-&nbsp;Gets&nbsp;the&nbsp;DISPLAY&nbsp;string&nbsp;for&nbsp;a&nbsp;given<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;server&nbsp;number<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;serverNum&nbsp;&lt;int&gt;&nbsp;-&nbsp;Server&nbsp;number<br />
+&nbsp;<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@return&nbsp;&lt;str&gt;&nbsp;-&nbsp;The&nbsp;DISPLAY&nbsp;string&nbsp;that&nbsp;references&nbsp;the&nbsp;given&nbsp;session</tt></dd></dl>
+ <dl ><dt ><a name="-isUsingXvfb" ><strong >isUsingXvfb</strong></a>(serverNum=None)</dt><dd ><tt >isUsingXvfb&nbsp;-&nbsp;Test&nbsp;if&nbsp;we&nbsp;are&nbsp;using&nbsp;Xvfb,<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;optionally&nbsp;at&nbsp;a&nbsp;specific&nbsp;server&nbsp;number<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;serverNum&nbsp;&lt;None/int&gt;&nbsp;Default&nbsp;None&nbsp;-&nbsp;If&nbsp;None,&nbsp;tests&nbsp;if<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;we&nbsp;have&nbsp;ANY&nbsp;Xvfb&nbsp;sessions&nbsp;managed.<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If&nbsp;an&nbsp;int,&nbsp;tests&nbsp;at&nbsp;a&nbsp;specific&nbsp;server&nbsp;number<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@return&nbsp;&lt;bool&gt;&nbsp;-&nbsp;True&nbsp;if&nbsp;we&nbsp;are&nbsp;managing&nbsp;Xvfb,&nbsp;otherwise&nbsp;False</tt></dd></dl>
+ <dl ><dt ><a name="-registerAtExitCleanup" ><strong >registerAtExitCleanup</strong></a>()</dt><dd ><tt >registerAtExitCleanup&nbsp;-&nbsp;Register&nbsp;an&nbsp;"at&nbsp;exit"&nbsp;handler&nbsp;which&nbsp;will<br />
+&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;cleanup/close&nbsp;any&nbsp;Xvfb&nbsp;sessions&nbsp;we&nbsp;are&nbsp;managing</tt></dd></dl>
+ <dl ><dt ><a name="-startXvfb" ><strong >startXvfb</strong></a>(serverNum, screenStr='1280x720x24')</dt><dd ><tt >startXvfb&nbsp;-&nbsp;Starts&nbsp;a&nbsp;managed&nbsp;Xvfb&nbsp;session&nbsp;at&nbsp;a&nbsp;given&nbsp;server&nbsp;num<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;serverNum&nbsp;&lt;int&gt;&nbsp;-&nbsp;Server&nbsp;number<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;screenStr&nbsp;&lt;str&gt;&nbsp;Default&nbsp;'1280x720x24'&nbsp;-&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Screen&nbsp;configuration&nbsp;for&nbsp;this&nbsp;Xvfb<br />
+&nbsp;<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;@return&nbsp;True<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;@raises&nbsp;-<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ValueError&nbsp;-&nbsp;We&nbsp;are&nbsp;already&nbsp;managing&nbsp;an&nbsp;Xvfb&nbsp;on&nbsp;#serverNum<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KeyError&nbsp;-&nbsp;Failed&nbsp;to&nbsp;start&nbsp;Xvfb&nbsp;on&nbsp;#serverNum&nbsp;because&nbsp;#serverNum<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;already&nbsp;in&nbsp;use<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OSError&nbsp;&nbsp;-&nbsp;Failed&nbsp;to&nbsp;start&nbsp;Xvfb&nbsp;on&nbsp;#serverNum&nbsp;for&nbsp;reason<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;other&nbsp;than&nbsp;#serverNum&nbsp;in&nbsp;use<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Exception&nbsp;str&nbsp;will&nbsp;contain&nbsp;exit&nbsp;code&nbsp;and&nbsp;output</tt></dd></dl>
+ <dl ><dt ><a name="-startXvfbRange" ><strong >startXvfbRange</strong></a>(startTryNum, lastTryNum, screenStr='1280x720x24')</dt><dd ><tt >startXvfbRange&nbsp;-&nbsp;Try&nbsp;to&nbsp;start&nbsp;an&nbsp;Xvfb&nbsp;using&nbsp;a&nbsp;range&nbsp;of&nbsp;possible<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;server&nbsp;numbers.&nbsp;Use&nbsp;this&nbsp;if&nbsp;multiple&nbsp;instances&nbsp;of&nbsp;Xvfb&nbsp;sessions&nbsp;could<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;be&nbsp;running.<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;startTryNum&nbsp;&lt;int&gt;&nbsp;-&nbsp;The&nbsp;first&nbsp;server&nbsp;num&nbsp;to&nbsp;attempt<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;lastTryNum&nbsp;&lt;int&gt;&nbsp;-&nbsp;The&nbsp;last&nbsp;server&nbsp;num&nbsp;to&nbsp;attempt<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;screenStr&nbsp;&lt;str&gt;&nbsp;Default&nbsp;'1280x720x24'&nbsp;-&nbsp;The&nbsp;screen&nbsp;configuration&nbsp;to&nbsp;use<br />
+&nbsp;<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@return&nbsp;&lt;int&gt;&nbsp;-&nbsp;The&nbsp;server&nbsp;num&nbsp;we&nbsp;succeded&nbsp;on&nbsp;starting&nbsp;a<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Xvfb&nbsp;session.<br />
+&nbsp;<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@raises&nbsp;-<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KeyError&nbsp;-&nbsp;Could&nbsp;not&nbsp;start&nbsp;an&nbsp;Xvfb&nbsp;session&nbsp;on&nbsp;any<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;server&nbsp;num&nbsp;in&nbsp;range&nbsp;because&nbsp;all&nbsp;were<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in&nbsp;use.<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OSError&nbsp;&nbsp;-&nbsp;Could&nbsp;not&nbsp;start&nbsp;an&nbsp;Xvfb&nbsp;session&nbsp;because<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Xvfb&nbsp;crashed&nbsp;for&nbsp;a&nbsp;reason&nbsp;other&nbsp;than<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;another&nbsp;session&nbsp;is&nbsp;active&nbsp;on&nbsp;serverNum</tt></dd></dl>
+ <dl ><dt ><a name="-stopAllManagedXvfbs" ><strong >stopAllManagedXvfbs</strong></a>()</dt><dd ><tt >stopAllManagedXvfbs&nbsp;-&nbsp;Stops&nbsp;all&nbsp;Xvfb's&nbsp;managed&nbsp;by&nbsp;this&nbsp;process<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;@return&nbsp;&lt;int&gt;&nbsp;-&nbsp;The&nbsp;number&nbsp;of&nbsp;Xvfb's&nbsp;stopped</tt></dd></dl>
+ <dl ><dt ><a name="-stopXvfb" ><strong >stopXvfb</strong></a>(serverNum)</dt><dd ><tt >stopXvfb&nbsp;-&nbsp;Stops&nbsp;a&nbsp;managed&nbsp;Xvfb&nbsp;session&nbsp;on&nbsp;a&nbsp;given&nbsp;server&nbsp;number<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;@param&nbsp;serverNum&nbsp;&lt;int&gt;&nbsp;-&nbsp;The&nbsp;server&nbsp;number<br />
+&nbsp;<br />
+&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;@return&nbsp;&lt;bool&gt;&nbsp;-&nbsp;True&nbsp;on&nbsp;success,&nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;False&nbsp;if&nbsp;there&nbsp;was&nbsp;no&nbsp;managed&nbsp;session&nbsp;on&nbsp;#serverNum</tt></dd></dl>
+</td></tr></table><p >
+<table width="100%" cellspacing="0" cellpadding="2" border="0" summary="section" >
+<tr bgcolor="#55aa55" >
+<td colspan="3" valign="bottom" >&nbsp;<br />
+<font color="#ffffff" face="helvetica, arial" ><big ><strong >Data</strong></big></font></td></tr>
+    
+<tr ><td bgcolor="#55aa55" ><tt >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td >&nbsp;</td>
+<td width="100%" ><strong >__all__</strong> = ('startXvfb', 'startXvfbRange', 'stopXvfb', 'stopAllManagedXvfbs', 'getDisplayStrForServerNum', 'isUsingXvfb', 'ensureDisplayPresent', 'registerAtExitCleanup')</td></tr></table>
+</p></p></p></body></html>
