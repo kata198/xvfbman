@@ -3,5 +3,6 @@ include README.rst
 include LICENSE
 include MANIFEST.in
 include setup.py
+include Changelog
 recursive-include xvfbman *.py
 recursive-include doc *.html
